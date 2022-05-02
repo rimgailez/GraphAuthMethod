@@ -42,7 +42,7 @@ public class LoginSecondStep extends BaseActivity {
                 if(passwordHelper.login(firstColor, secondColor, deviceId)){
                     text = "Prisijungimas sėkmingas.";
                 } else {
-                    text = "Prisijungimas nesėkmingas.";
+                    text = "Prisijungimas nesėkmingas. Prašome pabandyti dar kartą.";
                 }
                 Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginSecondStep.this, MainActivity.class);

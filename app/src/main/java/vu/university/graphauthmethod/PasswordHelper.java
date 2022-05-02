@@ -30,15 +30,10 @@ public class PasswordHelper {
         String firstPassword = createPassword(first);
         String secondPassword = createPassword(second);
         String password = firstPassword + "#" + secondPassword;
-        if(checkIfUserCanRegister(deviceId)){
-            if(checkIfDeviceExists(deviceId)){
-                System.out.println("exists");
-                return connectionHelper.updateDevice(deviceId, password, LocalDate.now());
-            }
-            System.out.println("add");
-            return connectionHelper.addDevice(deviceId, password);
+        if(checkIfDeviceExists(deviceId)){
+            return connectionHelper.updateDevice(deviceId, password, LocalDate.now());
         }
-        return false;
+        return connectionHelper.addDevice(deviceId, password);
     }
 
     private String createPassword (Color color){
@@ -56,8 +51,7 @@ public class PasswordHelper {
         String password = firstPassword + "#" + secondPassword;
         Device device = connectionHelper.getDevice(deviceId);
         if(device.password.equals(password)){
-            connectionHelper.updateLoginDate(deviceId, LocalDate.now());
-            return true;
+            return connectionHelper.updateLoginDate(deviceId, LocalDate.now());
         } else {
             device.failedLoginAttempts++;
             if(device.failedLoginAttempts == 3){

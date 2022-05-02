@@ -49,7 +49,7 @@ public class RegistrationSecondStep extends BaseActivity {
                     if(passwordHelper.register(firstColor, secondColor, deviceId)){
                         text = "Registracija sėkminga.";
                     } else {
-                        text = "Registracija nesėkminga.";
+                        text = "Registracija nesėkminga. Prašome pabandyti dar kartą.";
                     }
                     Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegistrationSecondStep.this, MainActivity.class);
