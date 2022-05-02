@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="200dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" android:layout_marginTop="310dp"
+            android:id="@+id/square3_10"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="60dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" android:layout_marginTop="310dp"
+            android:id="@+id/square3_9"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="270dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" android:layout_marginTop="240dp"
+            android:layout_marginEnd="71dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/square3_8"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="130dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" android:layout_marginTop="240dp"
+            android:id="@+id/square3_7"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="200dp" android:layout_marginTop="170dp" android:layout_marginEnd="141dp"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/square3_6"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="270dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure"
+            android:layout_marginTop="100dp" android:layout_marginEnd="71dp" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/square3_4"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="130dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" android:layout_marginTop="100dp"
+            android:id="@+id/square3_3"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="200dp"
+            android:layout_marginTop="30dp" app:layout_constraintTop_toBottomOf="@+id/pickFigure"
+            android:layout_marginEnd="141dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/square3_2"/>
+    <TextView
+            android:text="@string/pick_figure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pickFigure"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="80dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/adamina" android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="77dp"
+            android:layout_marginEnd="78dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="@string/next"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_blue_light" android:fontFamily="@font/adamina"
+            android:padding="10dp" android:paddingStart="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
+            android:paddingEnd="10dp" android:paddingRight="10dp" android:paddingBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="113dp"
+            android:layout_marginEnd="113dp" app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.AppCompat.Button"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="20dp"
+            android:id="@+id/next1"/>
+    <TextView
+            android:text="@string/first_login_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp" android:layout_marginEnd="60dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="60dp"
+            android:fontFamily="@font/adamina" android:textColor="@android:color/black"
+            android:id="@+id/firstLoginStep"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp" app:layout_constraintTop_toBottomOf="@+id/pickFigure"
+            android:outlineProvider="none"
+            android:id="@+id/square3_1"/>
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintTop_toBottomOf="@+id/pickFigure" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="60dp" android:layout_marginTop="170dp" android:id="@+id/square3_5"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

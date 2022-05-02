@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GraphAuthMethod</string>
+    <string name="first_registration_step">Pirmas registracijos etapas</string>
+    <string name="pick_figure">Pasirinkite vieną spalvotą kvadratą:</string>
+    <string name="next">Toliau</string>
+    <string name="second_registration_step">Antras registracijos etapas</string>
+    <string name="try_again">Bandyti dar kartą</string>
+    <string name="finish_registration">Baigti registraciją</string>
+    <string name="first_login_step">Pirmas prisijungimo etapas</string>
+    <string name="second_login_step">Antras prisijungimo etapas</string>
+    <string name="finish_login">Prisijungti</string>
+    <string name="register">Registruotis</string>
+</resources>
