@@ -19,22 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.RegistrationFirstStep">
+        <activity android:name=".activities.RegistrationFirstStepActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.RegistrationSecondStep">
+        <activity android:name=".activities.RegistrationSecondStepActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LoginFirstStep">
+        <activity android:name=".activities.LoginFirstStepActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LoginSecondStep">
+        <activity android:name=".activities.LoginSecondStepActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>

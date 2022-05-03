@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.os.Bundle;
-import vu.university.graphauthmethod.Color;
-import vu.university.graphauthmethod.Colors;
+import vu.university.graphauthmethod.models.Color;
+import vu.university.graphauthmethod.constants.Colors;
 import vu.university.graphauthmethod.R;
 
 import java.util.*;
 
-public class RegistrationFirstStep extends BaseActivity {
+public class RegistrationFirstStepActivity extends BaseActivity {
 
     private final Colors colors = new Colors();
     private android.graphics.Color color;
@@ -20,7 +20,7 @@ public class RegistrationFirstStep extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration_first_step);
+        setContentView(R.layout.registration_first_step_activity);
 
         Button next = findViewById(R.id.next);
         next.setOnClickListener(view -> {
@@ -29,7 +29,7 @@ public class RegistrationFirstStep extends BaseActivity {
                 CharSequence text = "Nepasirinkote spalvoto kvadrato!";
                 Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(RegistrationFirstStep.this, RegistrationSecondStep.class);
+                Intent intent = new Intent(RegistrationFirstStepActivity.this, RegistrationSecondStepActivity.class);
                 Color firstChoice = new Color(color.red(), color.green(), color.blue());
                 intent.putExtra("first_color", firstChoice);
                 startActivity(intent);

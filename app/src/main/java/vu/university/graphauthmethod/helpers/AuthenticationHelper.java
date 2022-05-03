@@ -1,28 +1,30 @@
-package vu.university.graphauthmethod;
+package vu.university.graphauthmethod.helpers;
 
 import android.os.Build;
 import androidx.annotation.RequiresApi;
+import vu.university.graphauthmethod.models.Color;
+import vu.university.graphauthmethod.models.Device;
 
 import java.time.LocalDate;
 
-public class PasswordHelper {
+public class AuthenticationHelper {
 
     private final ConnectionHelper connectionHelper = new ConnectionHelper();
 
     public boolean checkIfPasswordIsValid (Color first, Color second){
-        return first.red != second.red || first.green != second.green || first.blue != second.blue;
+        return first.getRed() != second.getRed() || first.getGreen() != second.getGreen() || first.getBlue() != second.getBlue();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean checkIfUserCanRegister(String deviceId){
         Device device = connectionHelper.getDevice(deviceId);
-        return device == null || device.password == null;
+        return device == null || device.getPassword() == null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean checkIfDeviceExists(String deviceId){
         Device device = connectionHelper.getDevice(deviceId);
-        return device.deviceId != null;
+        return device.getDeviceId() != null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -37,9 +39,9 @@ public class PasswordHelper {
     }
 
     private String createPassword (Color color){
-        int green = (int) ((1 - color.green) * 255);
-        int blue = (int) ((1 - color.blue) * 255);
-        int red = (int) ((1 - color.red) * 255);
+        int green = (int) ((1 - color.getGreen()) * 255);
+        int blue = (int) ((1 - color.getBlue()) * 255);
+        int red = (int) ((1 - color.getRed()) * 255);
         final String password = green + "*" + blue + "*" + red;
         return password;
     }
@@ -50,14 +52,14 @@ public class PasswordHelper {
         String secondPassword = createPassword(second);
         String password = firstPassword + "#" + secondPassword;
         Device device = connectionHelper.getDevice(deviceId);
-        if(device.password.equals(password)){
+        if(device.getPassword().equals(password)){
             return connectionHelper.updateLoginDate(deviceId, LocalDate.now());
         } else {
-            device.failedLoginAttempts++;
-            if(device.failedLoginAttempts == 3){
+            device.setFailedLoginAttempts(device.getFailedLoginAttempts()+1);
+            if(device.getFailedLoginAttempts() == 3){
                 connectionHelper.updateDevice(deviceId, null, null);
             } else {
-                connectionHelper.updateFailedLoginAttempts(deviceId, device.failedLoginAttempts);
+                connectionHelper.updateFailedLoginAttempts(deviceId, device.getFailedLoginAttempts());
             }
         }
         return false;

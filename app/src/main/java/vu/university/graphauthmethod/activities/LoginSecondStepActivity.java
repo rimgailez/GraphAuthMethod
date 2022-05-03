@@ -7,25 +7,25 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import vu.university.graphauthmethod.Color;
-import vu.university.graphauthmethod.Colors;
-import vu.university.graphauthmethod.PasswordHelper;
+import vu.university.graphauthmethod.models.Color;
+import vu.university.graphauthmethod.constants.Colors;
+import vu.university.graphauthmethod.helpers.AuthenticationHelper;
 import vu.university.graphauthmethod.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginSecondStep extends BaseActivity {
+public class LoginSecondStepActivity extends BaseActivity {
 
     private final Colors colors = new Colors();
     private android.graphics.Color color;
 
-    private final PasswordHelper passwordHelper = new PasswordHelper();
+    private final AuthenticationHelper authenticationHelper = new AuthenticationHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_second_step);
+        setContentView(R.layout.login_second_step_activity);
         Color firstColor = (Color) getIntent().getSerializableExtra("first_color");
 
         Context context = getApplicationContext();
@@ -39,13 +39,13 @@ public class LoginSecondStep extends BaseActivity {
                 Color secondColor = new Color(color.red(), color.green(), color.blue());
                 String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                 CharSequence text;
-                if(passwordHelper.login(firstColor, secondColor, deviceId)){
+                if(authenticationHelper.login(firstColor, secondColor, deviceId)){
                     text = "Prisijungimas sėkmingas.";
                 } else {
                     text = "Prisijungimas nesėkmingas. Prašome pabandyti dar kartą.";
                 }
                 Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginSecondStep.this, MainActivity.class);
+                Intent intent = new Intent(LoginSecondStepActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

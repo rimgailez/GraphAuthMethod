@@ -1,7 +1,9 @@
-package vu.university.graphauthmethod;
+package vu.university.graphauthmethod.helpers;
 
 import android.os.Build;
 import androidx.annotation.RequiresApi;
+import vu.university.graphauthmethod.constants.DatabaseInfo;
+import vu.university.graphauthmethod.models.Device;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -24,11 +26,11 @@ public class ConnectionHelper {
                 PreparedStatement statement = connection.prepareStatement(sql);
                 ResultSet result = statement.executeQuery();
                 if(result.next()){
-                    device.deviceId = result.getString("device_id");
-                    device.password = result.getString("password");
-                    device.registrationDate = result.getDate("registration_date");
-                    device.lastLoginDate = result.getDate("last_login_date");
-                    device.failedLoginAttempts = result.getInt("failed_login_attempts");
+                    device.setDeviceId(result.getString("device_id"));
+                    device.setPassword(result.getString("password"));
+                    device.setRegistrationDate(result.getDate("registration_date"));
+                    device.setLastLoginDate(result.getDate("last_login_date"));
+                    device.setFailedLoginAttempts(result.getInt("failed_login_attempts"));
                 }
                 statement.close();
                 connection.close();
